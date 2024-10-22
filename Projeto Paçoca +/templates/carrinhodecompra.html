@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt'br"
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho de compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/static/carrinhodecompra.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class= 'header-inner-content'>
+            <h1 class = 'logo'>Paçoca+</h1>
+            <div class="nav-icon-container">
+                <a href="#"><i class='bx bx-home' ></i></a> 
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h2>Meu Carrinho de Compras</h2>
+        <div class="project">
+            <div class="shop">
+                <div class="box" data-price="39.99">
+                    <img src="/static/bolo1.png" alt="">
+                    <div class="content">
+                        <h3>Bolo Red Velvet</h3>
+                        <h4 class="price">R$39,99</h4>
+                        <p class="unit">Quantidade: <input type="number" value="2" class="quantity"/></p>
+                        <p><button class="btn-area">
+                            <i class='bx bxs-trash'></i>
+                            <span class="btn2">Retirar do Carrinho</span>
+                        </button></p>
+                    </div>
+                </div>
+                <div class="box" data-price="20.45">
+                    <img src="/static/bolo2.png" alt="">
+                    <div class="content">
+                        <h3>Bolo de Morango</h3>
+                        <h4 class="price">R$20,45</h4>
+                        <p class="unit">Quantidade: <input type="number" value="1" class="quantity"/></p>
+                        <p><button class="btn-area">
+                            <i class='bx bxs-trash'></i>
+                            <span class="btn2">Retirar do Carrinho</span>
+                        </button></p>
+                    </div>
+                </div>
+                <div class="box" data-price="12.00">
+                    <img src="/static/bolo3.png" alt="">
+                    <div class="content">
+                        <h3>Tortilete de Morango</h3>
+                        <h4 class="price">R$12,00</h4>
+                        <p class="unit">Quantidade: <input type="number" value="5" class="quantity"/></p>
+                        <p><button class="btn-area">
+                            <i class='bx bxs-trash'></i>
+                            <span class="btn2">Retirar do Carrinho</span>
+                        </button></p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="right-bar">
+                <p><span>Subtotal:</span> <span id="subtotal">R$72,44</span></p>
+                <hr>
+                <p><span>Frete:</span> <span id="shipping">R$19,99</span></p>
+                <hr>
+                <p><span>Total:</span> <span id="total">R$92,43</span></p>
+    
+                <a href="#"><i class='bx bxs-shopping-bag'></i>Comprar Agora</a>
+            </div>
+        </div>
+    </div>    
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const shippingCost = 19.99;
+        
+            function updateTotal() {
+                const boxes = document.querySelectorAll('.box');
+                const subtotalElement = document.getElementById('subtotal');
+                const shippingElement = document.getElementById('shipping');
+                const totalElement = document.getElementById('total');
+                let subtotal = 0;
+                boxes.forEach(box => {
+                    const price = parseFloat(box.getAttribute('data-price'));
+                    const quantityInput = box.querySelector('.quantity');
+                    let quantity = parseInt(quantityInput.value, 10);
+        
+                    if (quantity < 1 || isNaN(quantity)) {
+                        quantity = 1;
+                        quantityInput.value = quantity;
+                    }
+                    subtotal += price * quantity;
+                });
+                const shipping = boxes.length > 0 ? shippingCost : 0;
+                const total = subtotal + shipping;
+                subtotalElement.textContent = `R$${subtotal.toFixed(2).replace('.', ',')}`;
+                shippingElement.textContent = `R$${shipping.toFixed(2).replace('.', ',')}`;
+                totalElement.textContent = `R$${total.toFixed(2).replace('.', ',')}`;
+            }
+        
+            document.querySelectorAll('.btn-area').forEach(button => {
+                button.addEventListener('click', function() {
+                    const box = this.closest('.box');
+                    box.remove();
+                    updateTotal();
+                });
+            });
+        
+            document.querySelectorAll('.quantity').forEach(input => {
+                input.addEventListener('input', function() {
+                    let quantity = parseInt(this.value, 10);
+        
+                    if (quantity < 1 || isNaN(quantity)) {
+                        quantity = 1;
+                        this.value = quantity;
+                    }
+                    updateTotal();
+                });
+            });
+            
+            updateTotal();
+        });
+        
+    </script>
+</body>
+</html>

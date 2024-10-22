@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Pagina Inicial</title>
+</head>
+<body>
+
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-cookie-bite" id = "icon"> Candys+</i>
+
+            <ul id="nav_list">
+                <li class = "nav-item active"> 
+                    <a href="#home">Início</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                <a href="/escolha" class = 'botao_login'>Login</a>
+            </button>
+
+            <button id="mobile_btn">
+                <i class = 'fa-solid fa-bars'></i>
+            </button>
+        </nav>
+
+    <div id="mobile_menu">
+
+        <ul id="mobile_nav_list">
+            <li class = "nav-item"> 
+                <a href="#home">Início</a>
+            </li>
+        </ul>
+        
+        <button class="btn-default">
+            <a href="/login" class = 'botao_login'>Login</a>
+        </button>
+
+    </div>
+
+    </header>
+    
+    <main id="content">
+        <section id="home">
+            <div id="cta">
+                <h1 class="title">
+                    Para
+                    <span> adoçar </span> a
+                    sua vida
+                </h1>
+
+                <p class="description">
+                Aqui você encontra os mais variados tipos de doces e sobremesas!
+                </p>
+
+            </div>
+
+            <div id="banner"> <!-- aq eh a imagem do inicio e tem q ajustar com o tamanho dos
+                botoes caso precise-->
+                <img src= '/static/red velvet cake.gif' alt="">
+            </div>
+        </section>
+
+    </main>
+
+    <script src='/javascript/script.js'></script>
+</body>
+</html>

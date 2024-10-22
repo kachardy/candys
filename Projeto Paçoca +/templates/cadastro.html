@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/static/styles2.css">
+</head>
+<body>
+    <div class = 'main_login'>
+        <div class = 'left_login'>
+            <h1>Crie sua <span>conta</span><br><span>Cadastre-se</span> para mais &#129473;</h1>
+            <img src="/static/cherry-pie-slice-animate (1).svg" class="bolo" alt="Torta">
+        </div>
+        <div class= 'right_login'>
+            <div class = 'card_login'>
+                <h1>Cadastro</h1>
+                {% set mensagens = get_flashed_messages() %}
+                {% if mensagens %}
+                    <h1>{{mensagens[0]}}</h1>
+                {%endif%}
+                <div class = 'text_field'>
+                    <form action="cadastrof" method="post">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="usuariocad" placeholder="Usuário" required>
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senhacad" placeholder="Senha" required>
+                        <button type = 'submit' class = 'botao_login' value="cadastrar">Cadastrar-se</button>
+                    </form>
+                </div>
+                <a href="/login">Fazer Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/styles2.css">
+</head>
+<body>
+    <div class = 'main_login'>
+        <div class = 'left_login'>
+            <h1>Faça <span>Login</span> <br> E mate seu desejo de doces &#129473;</h1>
+            <img src="/static/cherry-pie-slice-animate (1).svg" class="bolo" alt="Torta">
+        </div>
+        <div class= 'right_login'>
+            <div class = 'card_login'>
+                <h1>Login</h1>
+                {% set mensagens = get_flashed_messages() %}
+                {% if mensagens %}
+                    <h1>{{mensagens[0]}}</h1>
+                {%endif%}
+                <div class = 'text_field'>
+                    <form action="loginf" method="post">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="usuario" placeholder="Usuário" required>
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" placeholder="Senha" required>
+                        <button class = 'botao_login' type="submit" value="entrar">Login</button>
+                    </form>
+                </div>
+                <a href="/cadastro">Cadastrar-se</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

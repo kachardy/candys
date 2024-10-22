@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+header {
+  background-color: #ffd8fb;
+  padding-left: 10px;
+  padding-top: 10px;
+
+ }
+.nomeprincipal {
+  text-decoration: none;
+  color: #894c9b;
+  font-weight: 800;
+  letter-spacing: 6px;
+  font-size: 26px;
+
+}
+
+a{
+  text-decoration: none;
+  color: #894c9b;
+  font-weight: 800;
+  letter-spacing: 6px;
+
+}
+
+.main_login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffd8fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.left_login {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left_login > h1 {
+  color: #1d1d1d;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 5vh;
+  margin: 0;
+}
+span {
+  color: #894c9b;
+}
+
+.bolo {
+  width: 50vw;
+  height: 60vh;
+}
+ 
+.right_login {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_login{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #ff9fef;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #D681F0;
+}
+
+.card_login > h1{
+  color: #894c9b;
+  font-weight: 800;
+  margin: 0;
+}
+
+.text_field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.text_escolha {
+  width: 100%;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.text_field > form > input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #ffffff;
+  color: #894c9b;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #D681F0;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.text_field > form > label {
+  color: #894c9b;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+
+.text_field > form > input::placeholder{
+  color: #894c9b;
+}
+
+.botao_login {
+  width: 90%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: #C9AEEB;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px #824993;
+}
+
+.botao_escolha{
+  width: 90%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: #C9AEEB;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px #824993;
+}
